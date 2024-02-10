@@ -27,22 +27,28 @@
                             <a href="./form.html">Form</a>
                             <a href="#">Register</a>
                             <a href="./table.html">Table</a>
+                            <a href="./todo-app.html">ToDoList</a>
                         </div>
                     </div>
                 </nav>
             </header>
-            <form name="register-form">
+            
+            
+
+
+
+            <form name="regForm" id="registerForm">
+                <div id="errors">
+                </div>
                 <table>
-                    <tr><td>Imię <input type="text" name="fname"></td></tr>
-                    <tr><td>Nazwisko <input type="text" name="lname"></td></tr>
-                    <tr><td>Data urodzenia <input type="text" name="bdate" placeholder="DD-MM-YYYY"></td></tr>
-                    <tr><td>Hasło <input type="text" name="passw"></td></tr>
-                    <tr><td>Powtórz hasło <input type="text" name="rpassw"></td></tr>
-                    <tr><td>Opis <input type="text" name="abt" placeholder="Maksymalnie 20 znaków"></td></tr>
-                    <tr><td><button id="subm">Zarejestruj</button></td></tr>
+                    <tr><td>Imię <input type="text" id="fname" onblur="checkIfCorrect('fname')"> <span id=fnameAsterisk>*</span> </td></tr>
+                    <tr><td>Nazwisko <input type="text" id="lname" onblur="checkIfCorrect('lname')"> <span id=lnameAsterisk>*</span> </td></tr>
+                    <tr><td>Data urodzenia <input type="date" id="bdate" onclick="setDateMinMax()" onblur="checkIfCorrect('bdate')"> <span id=bdateAsterisk>*</span> </td></tr>
+                    <tr><td>Hasło <input type="text" id="passw" onblur="checkIfCorrect('passw')"> <span id=passwAsterisk>*</span> </td></tr>
+                    <tr><td>Powtórz hasło <input type="text" id="rpassw" onblur="checkIfCorrect('rpassw')"> <span id=rpasswAsterisk>*</span> </td></tr>
+                    <tr><td>Opis <input type="text" id="abt" placeholder="Maksymalnie 20 znaków" onblur="checkIfCorrect('abt')"> <span id=abtAsterisk>*</span> </td></tr>
+                    <tr><td><button id="subm" type="button" onclick="validate(this.form)">Zarejestruj</button></td></tr>
                 </table>
-
-
             </form>
             <footer>
                 <nav class="fat-footer">

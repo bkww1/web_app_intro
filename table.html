@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pl">
     <head>
-        <title>Zarejestruj się</title>
+        <title>Table</title>
         <link rel="stylesheet" type="text/css" href="style.css" title="Arkusz
             stylów CSS">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,39 +27,29 @@
                             <a href="./form.html">Form</a>
                             <a href="./register.html">Register</a>
                             <a href="#">Table</a>
+                            <a href="./todo-app.html">ToDoList</a>
                         </div>
                     </div>
                 </nav>
             </header>
-            <table class="contacts-table">
-                <tr>
-                    <th>Imię</th>
-                    <th>Nazwisko</th>
-                    <th>Numer telefonu</th>
-                </tr>
-                <tr>
-                    <td>Błażej</td>
-                    <td>Kwiatkowski</td>
-                    <td>123456789</td>
-                </tr>
-                <tr>
-                    <td>Jan</td>
-                    <td>Kowalski</td>
-                    <td>321223221</td>
-                </tr>
-                <tr>
-                    <td>Adam</td>
-                    <td>Nowak</td>
-                    <td>333555777</td>
-                </tr>
-                <tr>
-                    <td>Bartosz</td>
-                    <td>Jakis</td>
-                    <td>987654321</td>
-                </tr>
 
+            <div id="tableContainer">
+                <div id="tableControlButtons">
+                    <button id = "addRow" onclick="addRow()">DODAJ NA KONIEC</button> 
+                    <button id ="deleteRow" onclick="deleteLastRow()">USUN OSTATNI</button>
+                    <button id="markRows" onclick = "markRows()">WYBIERZ</button> 
+                    <button id="deleteCheckedRows" onclick = "deleteCheckedRows()">USUN ZAZNACZONE</button> 
+                </div>
+
+            <table class="editableTable" id="myTable">
+                <tr>
+                    <td contenteditable = "true">Test 1</td>
+                    <td contenteditable = "true">Test 1</td>
+                    <td> <input type ="checkbox" class="tableCheckbox" onchange = "isChecked(this)"></input> <button class="upButton" onclick= "moveRowUp(this)">⬆</button> <button class="downButton" onclick = "moveRowDown(this)">⬇</button> </td>
+                </tr>
             </table>
-
+            <span id="rowsCount">ILOŚĆ WIERSZY: 1</span>
+        </div> 
             <footer>
                 <nav class="fat-footer">
                     <div class="first-column">

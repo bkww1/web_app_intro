@@ -176,6 +176,8 @@ input[type="date"] {
 
 }
 
+
+
 th,
 td {
   width: 110px;
@@ -185,16 +187,29 @@ td {
   padding: 4px;
 }
 
+
+
+
 tr:nth-child(odd) {
   background-color: #dddddd;
 }
 
-form[name="register-form"] {
+#errors {
+  display: none;
+  border: 2px solid red;
+  margin-bottom: 10px;
+  color: red;
+  padding: 5px;
+  width: 200px;
+  text-align: center;
+}
+
+form[name="regForm"] {
   grid-row: 2;
   place-self: center;
 }
 
-form[name="register-form"] td {
+form[name="regForm"] td {
  width: 200px;
 }
 
@@ -202,15 +217,27 @@ form[name="register-form"] td {
   font-size: large;
 }
 
-form[name="register-form"] input[type="text"] {
+form[name="regForm"] input[type="text"] {
   height: 24px;
   padding: 1px;
  }
+form[name="regForm"] input[type="date"] {
+  height: 24px;
+  padding: 1px;
+  width: 85%;
+  text-align: center;
+}
 
- form[name="register-form"] #subm {
+ form[name="regForm"] #subm {
   height: 24px;
   width: 80%;
  }
+
+ [id*="Asterisk"] {
+  display: none;
+  color: red;
+}
+
 .drop-button {
   background-color: #2609ce;
   color: white;
@@ -258,4 +285,50 @@ form[name="register-form"] input[type="text"] {
 
 .dropdown-content a:hover {
   background-color: rgb(115, 183, 243);
+}
+
+
+
+
+#myTable tr {
+  width: 110px;
+  height: 30px;
+  max-width: 110px;
+  max-height: 30px;
+  border: 2px solid #c06a6a;
+  text-align: center;
+  padding: 4px;
+}
+
+.editableTable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 10px;
+}
+#rowsCount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+#tableControlButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+#tableControlButtons button {
+  width: 150px;
+  height: 30px;
+  margin: 4px;
+}
+
+
+.tableCheckbox {
+  display: none;
 }
